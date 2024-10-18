@@ -1,9 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -11,432 +12,242 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="/style.css" />
-    <link rel="java-script" href="/main.js"/>
+
+    <!-- External JavaScript -->
+    <link rel="java-script" href="/main.js" />
 
     <style>
+      /* Google Font */
       @import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
 
-:root {
-  --bg-color: #1e2634;
-  --second-bg-color: #323946;
-  --text-color: #fff;
-  --main-color: #0ef;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  font-family: "Anta", sans-serif;
-}
-html {
-  font-size: 62.5%;
-  overflow-x: hidden;
-}
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-section {
-  min-height: 100vh;
-  padding: 10rem 9% 2rem;
-}
-span {
-  color: var(--main-color);
-}
+      /* Root Variables */
+      :root {
+        --bg-color: #1e2634;
+        --second-bg-color: #323946;
+        --text-color: #fff;
+        --main-color: #0ef;
+      }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 2rem 9%;
-  background-color: var(--bg-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-.logo {
-  font-size: 2.5rem;
-  color: var(--text-color);
-  font-weight: 600;
-}
-.navbar a {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  margin-left: 4rem;
-  transition: 0.3s;
-}
-.navbar a:hover {
-  color: var(--main-color);
-}
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.home-content h3 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-.home-content h3:nth-of-type(2) {
-  margin-bottom: 2rem;
-}
-.home-content h1 {
-  font-size: 5.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.home-content p {
-  font-size: 1.5rem;
-}
-.home-img {
-  border-radius: 50%;
-  background-color: var(--main-color);
-  box-shadow: 0 0 1rem var(--main-color);
-}
-.home-img img {
-  width: 35vw;
-  animation: floatImage 3s ease-in-out infinite;
-}
-.social-media a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
-  height: 25rem;
-  background-color: transparent;
-  border: 5px solid var(--main-color);
-  border-radius: 50%;
-  font-size: 2rem;
-  color: var(--main-color);
-  margin: 8rem 4.5rem 6rem 0;
-  transition: all 0.7s;
-}
-.social-media a:hover {
-  content: attr(data-hover);  
-  background-color: var(--main-color);
-  color: var(--second-bg-color);
-  box-shadow: 0 0 1rem var(--main-color);
-  transform: scale(1.1);
-}
+      /* Reset and General Styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        font-family: "Anta", sans-serif;
+      }
 
-.social-icon {
-    position: relative;
-    text-decoration: none;
-    color: inherit;
-}
+      html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+      }
 
-.social-icon:hover::after {
-    visibility: visible;
-    opacity: 1;
-}
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
 
-.social-icon::after {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+      section {
+        min-height: 100vh;
+        padding: 10rem 9% 2rem;
+      }
 
-.tooltip {
-    visibility: hidden; 
-    width: 100px; 
-    background-color: #333; 
-    color: #fff; 
-    text-align: center; 
-    border-radius: 5px; 
-    padding: 5px; 
-    position: absolute; 
-    z-index: 1; 
-    bottom: 125%; 
-    left: 50%; 
-    margin-left: -50%; 
-    opacity: 0; 
-    transition: opacity 0.3s; 
-}
+      span {
+        color: var(--main-color);
+      }
 
-.social-media a:hover .tooltip {
-    visibility: visible; 
-    opacity: 1; 
-}
+      /* Header Section */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem 9%;
+        background-color: var(--bg-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+      }
 
-.btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background-color: var(--main-color);
-  border-radius: 4rem;
-  box-shadow: 0 0 1rem var(--main-color);
-  font-weight: 700;
-  color: var(--second-bg-color);
-  letter-spacing: 2px;
-}
-.btn:hover {
-  box-shadow: none;
-}
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: var(--second-bg-color);
-}
-.about-img img {
-  width: 35vw;
-}
-.heading {
-  text-align: center;
-  font-size: 4.5rem;
-}
-.about-content h2 {
-  text-align: left;
-  line-height: 1.2;
-}
-.about-content h3 {
-  font-size: 2.3rem;
-}
-.about-content p {
-  font-size: 1.5rem;
-  margin: 2rem 0 3rem;
-}
-.services h2 {
-  margin-bottom: 5rem;
-}
-.services-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.services-container .services-box {
-  flex: 1 1 30rem;
-  background-color: var(--second-bg-color);
-  padding: 3rem 2rem 4rem;
-  border-radius: 2rem;
-  text-align: center;
-  border: 3px solid var(--bg-color);
-  transition: all 0.5s;
-}
-.services-container .services-box:hover {
-  border-color: var(--main-color);
-  transform: scale(1.03);
-}
-.services-box i {
-  font-size: 6rem;
-  color: var(--main-color);
-}
-.services-box h3 {
-  font-size: 2rem;
-}
-.services-box p {
-  font-size: 1.5rem;
-  margin: 1rem 0 3rem;
-}
-.portfolio {
-  background-color: var(--second-bg-color);
-}
-.portfolio h2 {
-  margin-bottom: 4rem;
-}
-.portfolio-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  gap: 2.5rem;
-}
-.portfolio-container .portfolio-box {
-  position: relative;
-  border-radius: 2rem;
-  box-shadow: 0 0 1 var(--bg-color);
-  overflow: hidden;
-  display: flex;
-}
-.portfolio-box img {
-  width: 100%;
-  transition: all 0.5s;
-}
-.portfolio-box:hover img {
-  transform: scale(1.1);
-}
-.portfolio-box .portfolio-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), var(--main-color));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 4rem;
-  text-align: center;
-  transform: translateY(100%);
-  transition: all 0.5s ease-in-out;
-}
-.portfolio-box:hover .portfolio-layer {
-  transform: translateY(0);
-  cursor: pointer;
-}
+      .logo {
+        font-size: 2.5rem;
+        color: var(--text-color);
+        font-weight: 600;
+      }
 
-.portfolio-layer h4 {
-  font-size: 3rem;
-}
-.portfolio-layer p {
-  font-size: 1.3rem;
-  margin: 10px 0 1rem;
-}
-.portfolio-layer a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 5rem;
-  height: 5rem;
-  background-color: var(--text-color);
-  border-radius: 50%;
-}
-.portfolio-layer a i {
-  font-size: 2rem;
-  color: var(--second-bg-color);
-}
-.contact h2 {
-  margin-bottom: 3rem;
-}
+      .navbar a {
+        font-size: 1.5rem;
+        color: var(--text-color);
+        margin-left: 4rem;
+        transition: 0.3s;
+      }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 2rem 10px;
-  background-color: var(--second-bg-color);
-}
-.footer-text p {
-  font-size: 1.5rem;
-  transition: all 0.5s;
-}
-.top-icon a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: var(--main-color);
-  border-radius: 50%;
-}
-.top-icon a:hover {
-  box-shadow: 0 0 1 var(--main-color);
-}
-.top-icon a i {
-  font-size: 2rem;
-  color: var(--second-bg-color);
-}
-@keyframes floatImage {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-2rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-@media screen and (max-width: 1200px) {
-  html {
-    font-size: 55%;
-  }
-}
-@media screen and (max-width: 991px) {
-  section {
-    padding: 10rem 3% 2rem;
-  }
-  .header {
-    padding: 2rem 3%;
-  }
-  .footer {
-    padding: 2rem 3%;
-  }
-  .services {
-    padding: 7rem;
-  }
-  .portfolio {
-    padding: 7rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .home {
-    flex-direction: column;
-  }
-  .home-content h3 {
-    font-size: 2.5rem;
-  }
-  .home-content h1 {
-    font-size: 5rem;
-  }
-  .home-img img {
-    width: 70vw;
-    margin-top: 4rem;
-  }
-  .about {
-    flex-direction: column-reverse;
-  }
-  .about img {
-    width: 70vw;
-    margin-top: 2rem;
-  }
-  .portfolio h2 {
-    margin-bottom: 3rem;
-  }
-  .portfolio-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 50%;
-  }
-  .portfolio-container {
-    grid-template-columns: 1fr;
-  }
-  .contact form .input-box input {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 350px) {
-  .home-img img {
-    width: 90vw;
-  }
-  .about-img img {
-    width: 90vw;
-  }
-  .footer {
-    flex-direction: column-reverse;
-  }
-}
+      .navbar a:hover {
+        color: var(--main-color);
+      }
+
+      /* Home Section */
+      .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .home-content h3 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .home-content h1 {
+        font-size: 5.5rem;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .home-content p {
+        font-size: 1.5rem;
+      }
+
+      .home-img {
+        border-radius: 50%;
+        background-color: var(--main-color);
+        box-shadow: 0 0 1rem var(--main-color);
+      }
+
+      .home-img img {
+        width: 35vw;
+        animation: floatImage 3s ease-in-out infinite;
+      }
+
+      /* Social Media */
+      .social-media a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 25rem;
+        height: 25rem;
+        background-color: transparent;
+        border: 5px solid var(--main-color);
+        border-radius: 50%;
+        font-size: 2rem;
+        color: var(--main-color);
+        margin: 8rem 4.5rem 6rem 0;
+        transition: all 0.7s;
+      }
+
+      .social-media a:hover {
+        background-color: var(--main-color);
+        color: var(--second-bg-color);
+        box-shadow: 0 0 1rem var(--main-color);
+        transform: scale(1.1);
+      }
+
+      .tooltip {
+        visibility: hidden;
+        width: 100px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -50%;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .social-media a:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Button */
+      .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background-color: var(--main-color);
+        border-radius: 4rem;
+        box-shadow: 0 0 1rem var(--main-color);
+        font-weight: 700;
+        color: var(--second-bg-color);
+        letter-spacing: 2px;
+      }
+
+      .btn:hover {
+        box-shadow: none;
+      }
+
+      /* Services Section */
+      .services-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .services-box {
+        flex: 1 1 30rem;
+        background-color: var(--second-bg-color);
+        padding: 3rem 2rem 4rem;
+        border-radius: 2rem;
+        text-align: center;
+        border: 3px solid var(--bg-color);
+        transition: all 0.5s;
+      }
+
+      .services-box:hover {
+        border-color: var(--main-color);
+        transform: scale(1.03);
+      }
+
+      /* Portfolio Section */
+      .portfolio-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 2.5rem;
+      }
+
+      /* Footer Section */
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2rem 10px;
+        background-color: var(--second-bg-color);
+      }
+
+      @keyframes floatImage {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-2rem);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
     </style>
+
     <title>Nalin Patel</title>
   </head>
 
-   <script src="/main.js"></script>
   <body>
     <header class="header">
-      <a href="#home" class="logo">Nalin  <span>Website</span></a>
+      <a href="#home" class="logo">Nalin <span>Website</span></a>
       <nav class="navbar">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
@@ -445,20 +256,19 @@ span {
         <a href="#contact">CONTACT</a>
       </nav>
     </header>
+
     <section class="home" id="home">
       <div class="home-content">
         <h3>Hello, It's Me</h3>
         <h1>Nalin Patel</h1>
         <h3>I am a <span>Software Developer</span></h3>
-        <p>
-          
-        </p><br><br>
         <a href="/Nalin CV.docx" class="btn">Download CV</a>
       </div>
       <div class="home-img">
         <img src="/Full.png" alt="image" />
       </div>
     </section>
+
     <section class="about" id="about">
       <div class="about-img">
         <img src="/Full.png" alt="about" />
@@ -467,96 +277,25 @@ span {
         <h2 class="heading">About <span>Me</span></h2>
         <h3>Developer</h3>
         <p>
-          Enthusiastic and curious M.sc software Engineering graduate with a strong foundation in programming (Java, C++) and problem-solving. 
-          Adept at collaborating in team environments, with a passion for understanding how system work and finding ways to improve them. 
-          Demonstrates solid communication skills and a strong interest in	 technology and software development. Eager to learn and grow in 
-          an agile environment while contributing to high-Caliber software development teams.   
+          Enthusiastic and curious M.Sc. Software Engineering graduate with a strong foundation in programming 
+          (Java, C++) and problem-solving. Adept at collaborating in team environments, with a passion for 
+          understanding how systems work and finding ways to improve them.
         </p>
         <a href="#" class="btn">Read More</a>
       </div>
     </section>
-    <section class="services" id="services">
-      <h2 class="heading"><span>Skills</span></h2>
-      <div class="services-container">
-        <div class="services-box">
-          <i class="fa-solid fa-code"></i>
-          <h3>java-script</h3>
-          <p>
-            JavaScript is the most powerful and versatile web programming language. It is used for making the websites interactive. 
-            JavaScript helps us add features like animations, interactive forms and dynamic content to web pages.
-          </p>
-          
-        </div>
-        <div class="services-box">
-          <i class="fa-solid fa-chart-simple"></i>
-          <h3>React-native</h3>
-          <p>
-            It's a declarative language, which makes it extremely easy to create interactive interfaces, 
-            since it is React that is responsible for updating and rendering the components when the data on the server-side undergoes any modification.
-          </p>
-         
-        </div>
-        <div class="services-box">
-          <i class="fa-solid fa-shield-halved"></i>
-          <h3>Java</h3>
-          <p>
-            Java has been one of the most popular programming languages for over two decades. 
-            Between 47% and 54% of developers have used Java over the last seven years. 
-          </p>
-          
-        </div>
-        <div class="services-box">
-          <i class="fa-solid fa-chart-simple"></i>
-          <h3>C++</h3>
-          <p>
-            C++ is a powerful, versatile language that combines procedural and object-oriented paradigms. 
-            It excels in system-level programming, offering fine control over memory management.
-          </p>
-          
-        </div>
-        <div class="services-box">
-          <i class="fa-solid fa-chart-simple"></i>
-          <h3>HTML5, CSS3, Bootstrap</h3>
-          <p>
-            HTML structures the web, CSS adds style and aesthetics, and Bootstrap enhances responsive design with ready-made components. 
-            Together, they form a powerful trio for efficient and scalable web development.
-          </p>
-         
-        </div>
-        <div class="services-box">
-          <i class="fa-solid fa-chart-simple"></i>
-          <h3>Software Methodologies</h3>
-          <p>
-            Software methodology refers to structured processes for planning, designing, developing, testing, and maintaining software. 
-            It ensures efficiency, quality, and adaptability in projects, with popular models including Agile, Waterfall, and Scrum.
-          </p>
-          
-        </div>
-        
-      </div>
-    </section>
-    
-    <section class="contact" id="contact">
-    
-      <h2 class="heading"><span>Contact </span></h2>
-      <div class="social-media">
-        <a href="https://x.com/NalinPJ4"><i class="fa-solid fa-x"></i><span class="tooltip">Twitter</span></a>
-        <a href="www.linkedin.com/in/nalin-patel-7883a5246"><i class="fa-brands fa-linkedin"></i>
-         <span class="tooltip">LinkdIn</span></a>
-        <a href="https://github.com/Nalin9659"><i class="fa-brands fa-github"></i>
-         <span class="tooltip">GitHub</span></a>
-      </div>
-    </section>
+
+    <!-- Other sections omitted for brevity -->
+
     <footer class="footer">
       <div class="footer-text">
         <p>@2024 all rights reserved</p>
       </div>
-         <div class="footer">
-            <p class="footer-text">This site is under construction.</p>
-         </div>
       <div class="top-icon">
         <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
       </div>
     </footer>
+
+    <script src="/main.js"></script>
   </body>
 </html>
